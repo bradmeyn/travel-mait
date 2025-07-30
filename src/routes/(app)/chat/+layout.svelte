@@ -1,9 +1,9 @@
 <script lang="ts">
-	import '../../app.css';
+	import '../../../app.css';
 	let { children } = $props();
 </script>
 
-<main class="min-h-screen bg-[#191B2A] font-mono text-white">
+<main class="min-h-screen bg-zinc-900 text-white">
 	<div class="container mx-auto">
 		<header class="flex items-center justify-between p-4">
 			<div class="flex items-center space-x-2">

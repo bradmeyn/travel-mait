@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { SendHorizontal } from 'lucide-svelte';
+	
 	let { prompt = $bindable(''), onsubmit } = $props();
 	let isSubmitting = $state(false);
 	let textareaRef: HTMLTextAreaElement;
@@ -30,7 +32,7 @@
 <div class="mx-auto max-w-3xl">
 	<form onsubmit={handleSubmit} class="relative">
 		<div
-			class="relative overflow-hidden rounded-lg border border-gray-700 bg-[#1E2031] transition-all focus-within:border-transparent focus-within:ring-2 focus-within:ring-indigo-500"
+			class="relative overflow-hidden rounded-lg border border-zinc-700 bg-zinc-800 transition-all focus-within:border-transparent focus-within:ring-2 focus-within:ring-zinc-700"
 		>
 			<div class="flex flex-col">
 				<textarea
@@ -46,11 +48,11 @@
 				<div class="flex justify-end px-4 pb-3">
 					<button
 						type="submit"
-						class="flex items-center justify-center rounded bg-indigo-500 p-2 px-4 text-white transition-colors hover:bg-indigo-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
+						class="flex items-center justify-center rounded bg-orange-500 p-2 text-white transition-colors hover:bg-orange-600 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
 						disabled={isSubmitting || !prompt.trim()}
 						title="Submit"
 					>
-						Send
+						<SendHorizontal class="size-4" />
 						{#if isSubmitting}
 							<svg
 								class="h-5 w-5 animate-spin"
