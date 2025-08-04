@@ -2,7 +2,7 @@
 	import * as Accordion from '$lib/components/ui/accordion';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Card, CardContent } from '$lib/components/ui/card';
-	import type { DayItinerary } from '../chat-state.svelte';
+	import type { DayItinerary } from '$lib/schemas/itinerary';
 	import ItineraryActivity from './itinerary-activity.svelte';
 
 	interface Props {

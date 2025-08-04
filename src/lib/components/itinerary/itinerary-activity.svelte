@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Badge } from '$lib/components/ui/badge';
 	import { Card, CardContent } from '$lib/components/ui/card';
-	import type { Activity } from '../chat-state.svelte';
+	import type { Activity } from '$lib/schemas/itinerary'; // Adjust import path as needed
 
 	interface Props {
 		activity: Activity;
@@ -14,7 +14,7 @@
 	}
 </script>
 
-<Card class="bg-zinc-900 border-zinc-700">
+<Card class="border-zinc-700 bg-zinc-900">
 	<CardContent class="p-3">
 		<div class="mb-2 flex items-start justify-between">
 			<div class="flex items-center gap-2">
@@ -24,17 +24,17 @@
 				<span class="text-sm text-gray-400">({activity.duration})</span>
 			</div>
 			{#if activity.cost}
-				<Badge variant="outline" class="text-green-400 border-green-400/30">
+				<Badge variant="outline" class="border-green-400/30 text-green-400">
 					{activity.cost}
 				</Badge>
 			{/if}
 		</div>
-		
+
 		<h6 class="mb-2 font-medium text-white">{activity.title}</h6>
 		<p class="mb-2 text-sm text-gray-400">{activity.description}</p>
-		
+
 		{#if activity.tips}
-			<div class="rounded bg-yellow-900/20 border border-yellow-700/30 p-2 text-xs text-yellow-400">
+			<div class="rounded border border-yellow-700/30 bg-yellow-900/20 p-2 text-xs text-yellow-400">
 				💡 {activity.tips}
 			</div>
 		{/if}
