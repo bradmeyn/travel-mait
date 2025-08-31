@@ -10,10 +10,9 @@
 
 	interface Props {
 		itinerary: Itinerary;
-		onClose: () => void;
 	}
 
-	let { itinerary, onClose }: Props = $props();
+	let { itinerary }: Props = $props();
 
 	const budgetItems = itinerary.budget_breakdown
 		? [
@@ -44,9 +43,6 @@
 					</span>
 				</div>
 			</div>
-			<button class="p-2 text-gray-400 transition-colors hover:text-white" onclick={onClose}>
-				<X class="h-5 w-5" />
-			</button>
 		</div>
 	</div>
 
@@ -73,7 +69,7 @@
 
 		<Accordion.Root type="single" class="space-y-3">
 			{#each itinerary.daily_itinerary as day}
-				<ItineraryDay {day} value="day-{day.day}" />
+				<ItineraryDay {day} />
 			{/each}
 		</Accordion.Root>
 	</div>
@@ -103,7 +99,7 @@
 						{/each}
 					</div>
 
-					<Separator class="bg-zinc-700" />
+					<Separator />
 
 					<div
 						class="flex items-center justify-between rounded border border-green-700/30 bg-green-900/20 p-3"
